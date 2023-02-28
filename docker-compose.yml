@@ -36,6 +36,11 @@ services:
         PMA_USER: root
         PMA_PASSWORD: root
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+        - "8025:8025"
+
   appdata:
     image: tianon/true
     volumes:

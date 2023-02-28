@@ -71,8 +71,24 @@ group :test do
   gem "webdrivers"
 end
 
-gem "devise"
+gem 'devise'
 
-# gem 'omniauth'
+gem 'omniauth'
 
-# gem 'omniauth-facebook'
+gem 'omniauth-facebook'
+
+gem 'omniauth-rails_csrf_protection'
+
+gem "cancancan"
+
+gem 'omniauth-google-oauth2'
+
+gem 'sass-rails'
+
+gem "letter_opener", group: :development
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.2.2'
+gem 'sassc-rails'
+
+gem 'figaro'
