@@ -92,3 +92,4 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'sassc-rails'
 
 gem 'figaro'
+gem "gon"

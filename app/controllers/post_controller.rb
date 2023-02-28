@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
-  def index
-    gon.mode = 'Tùy chỉnh'
+  def store
+    Post.create(params)
   end
 end

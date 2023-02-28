@@ -1,7 +1,7 @@
 <div class="create_post">
   <div class="input">
     <%= image_tag('ava1.jpg') %>
-    <input placeholder="Lại Văn ơi, bạn đang nghĩ gì thế?"/>
+    <input id="myBtn" placeholder="Lại Văn ơi, bạn đang nghĩ gì thế?"/>
   </div>
   <div>
     <div class="line"></div>
@@ -242,6 +242,66 @@
     <div class="item">
       <%= image_tag('share-svgrepo-com.svg') %>
       <div class="share">Chia sẻ</div>
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content modal_create_post">
+    <span class="close" id="close">&times;</span>
+    <div class="modal_title">
+      <h4>Tạo bài viết</h4>
+    </div>
+    <div class="auth">
+      <div class="user_avatar">
+        <%= image_tag('ava1.jpg') %>
+      </div>
+      <div class="user_name">
+        <h5 class="item">
+          <%= current_user.email %>
+        </h5>
+        <button class="item" id="myBtn1">
+          tuy chinh
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal1" class="modal">
+  <div class="modal-content modal_mode">
+    <span class="close" id="close1">&times;</span>
+    <div class="modal_title">
+      <h4>Đối tượng của bài viết</h4>
+    </div>
+    <div class="text">
+      <strong>Ai có thể xem bài viết của bạn?</strong>
+      Bài viết của bạn sẽ hiển thị ở Bảng feed, trang cá nhân và kết quả tìm kiếm.
+      Tuy đối tượng mặc định là <strong>Bạn bè</strong>, nhưng bạn có thể thay đổi đối tượng của riêng bài viết này.
+    </div>
+    <label class="radio_btn_wrap">
+        <%= image_tag('global-svgrepo-com.svg') %>
+      <div class="item">
+        Bất kỳ ai
+      </div>
+      <%= radio_button("post", "mode", "public") %>
+    </label>
+    <label class="radio_btn_wrap">
+      <%= image_tag('friend-3-svgrepo-com.svg') %>
+      <div class="item">
+        Bạn bè
+      </div>
+      <%= radio_button("post", "mode", "only_friend", :checked => true) %>
+    </label>
+    <label class="radio_btn_wrap">
+      <%= image_tag('lock-svgrepo-com.svg') %>
+      <div class="item">
+        Chỉ mình tôi
+      </div>
+      <%= radio_button("post", "mode", "only_me") %>
+    </label>
+    <div class="button_wrap">
+      <button class="cancel">Hủy</button>
+      <button class="mode_seleted" id="mode_seleted">Xong</button>
     </div>
   </div>
 </div>

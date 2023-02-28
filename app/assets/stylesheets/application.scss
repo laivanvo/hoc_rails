@@ -224,6 +224,7 @@ body {
             background-color: aliceblue;
             outline: none;
             margin-left: 10px;
+            cursor: pointer;
           }
           .line {
             display: flex;
@@ -257,6 +258,88 @@ body {
               img {
                 width: 30px;
                 height: 30px;
+              }
+            }
+          }
+        }
+      }
+      .modal_mode {
+        .radio_btn_wrap {
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          &:hover {
+            background-color: aliceblue;
+          }
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+          .item {
+            margin-left: 10px;
+            width: 80%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            div {
+              width: 1000%;
+            }
+          }
+          input {
+            flex: 1;
+          }
+        }
+        .button_wrap {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          padding-top: 10px;
+          button {
+            cursor: pointer;
+            border-radius: 6px;
+          }
+          .cancel {
+            margin-right: 10px;
+            width: 40px;
+            height: 30px;
+            background-color: #fff;
+            color: #1B74E4;
+            border: none;
+            &:hover {
+              background-color: aliceblue;
+            }
+          }
+          .mode_seleted {
+            margin-right: 10px;
+            width: 80px;
+            height: 30px;
+            background-color: #1B74E4;
+            color: #fff;
+          }
+        }
+      }
+      .modal_create_post {
+        .auth {
+          .user_name {
+            button {
+              width: 80px;
+              height: 40px;
+              cursor: pointer;
+              &::after {
+                content: "";
+                width: 30px;
+                height: 30px;
+                background-image: url("setting-svgrepo-com.svg");
+                top: 10px;
+                right: 5px;
+                position: absolute;
+                display: inline-block;
               }
             }
           }
@@ -420,7 +503,7 @@ body {
   background-color: #ffff;
   min-width: 100%;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   transform: translate(0px, 0px);
   top: 0;
@@ -439,6 +522,77 @@ body {
   }
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+  background-color: #ddd;
+}
 
-.show {display: block;}
+.show {
+  display: block;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  border-radius: 6px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 6px;
+  .modal_title {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .auth {
+    display: flex;
+    align-items: center;
+    .user_avatar {
+      width: 10%;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    .user_name {
+      width: 70%;
+      .item {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
